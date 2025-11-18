@@ -1,0 +1,7 @@
+# Arduino/ESP32 implementation of LivelyBot High Torque Motor Control Library
+# This directory will contain:
+# - libraries/ - Arduino libraries
+# - examples/ - Example sketches
+# - src/ - Source files
+# - hardware/ - Hardware-specific implementations
+# - docs/ - Arduino-specific documentation

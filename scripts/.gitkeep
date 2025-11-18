@@ -1,0 +1,7 @@
+# Build and configuration scripts for LivelyBot High Torque Motor Control Library
+# This directory will contain:
+# - setup/ - Environment setup scripts
+# - build/ - Build automation scripts
+# - test/ - Testing scripts
+# - deploy/ - Deployment scripts
+# - utils/ - Utility scripts

@@ -1,0 +1,7 @@
+# C++ implementation of LivelyBot High Torque Motor Control Library
+# This directory will contain:
+# - src/ - C++ source files
+# - include/ - Header files
+# - CMakeLists.txt or Makefile - Build configuration
+# - tests/ - Unit tests
+# - examples/ - Example programs
