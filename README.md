@@ -282,7 +282,7 @@ MIT License - See LICENSE file for details
 ## Related Links
 
 - [High Torque Robotics Official SDK](https://github.com/HighTorque-Robotics/livelybot_hardware_sdk) - Protocol reference
-- [RobStride Control](https://github.com/tianrking/RobStride_Control) - Related project: Archimedean motor control
+- [RobStride Control](https://github.com/tianrking/RobStride_Control) - Related project: RobStride & XIAOMI motor control
 
 ---
 

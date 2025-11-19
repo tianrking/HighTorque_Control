@@ -282,7 +282,7 @@ MIT License - 详见LICENSE文件
 ## 相关链接
 
 - [高擎机器人官方SDK](https://github.com/HighTorque-Robotics/livelybot_hardware_sdk) - 协议参考
-- [RobStride Control](https://github.com/tianrking/RobStride_Control) - 相关项目：灵足电机控制
+- [RobStride Control](https://github.com/tianrking/RobStride_Control) - 相关项目：RobStride & XIAOMI 电机控制
 
 ---
 
