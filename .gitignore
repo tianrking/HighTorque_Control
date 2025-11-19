@@ -169,6 +169,14 @@ can_motor_scanner
 velocity_acceleration_control
 angle_stream_control
 
+# C++ - Also ignore in subdirectories
+*/can_motor_scanner
+*/velocity_acceleration_control
+*/angle_stream_control
+cpp/can_motor_scanner
+cpp/velocity_acceleration_control
+cpp/angle_stream_control
+
 # C++ - Compiled binaries for all platforms
 *.bin
 *.app
@@ -177,6 +185,15 @@ angle_stream_control
 # Rust - Build artifacts and dependencies
 /target/
 Cargo.lock
+
+# Rust - Release binaries (keep structure but ignore executables)
+/target/release/can_motor_scanner
+/target/release/velocity_acceleration_control
+/target/release/angle_stream_control
+
+# Rust - Debug binaries
+/target/debug/
+/target/*/debug/
 
 # Arduino - Build files
 *.hex
@@ -188,6 +205,8 @@ Cargo.lock
 build/
 dist/
 out/
+/bin/
+/release/
 
 # All Languages - Make/CMake build files
 Makefile.deps
