@@ -1,4 +1,8 @@
-# Byte-compiled / optimized / DLL files
+# LivelyBot High Torque Motor Control Library - .gitignore
+# Multi-language motor control project: Python, C++, Rust, Arduino
+# Using SocketCAN for high-performance real-time motor communication
+
+# Python - Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -152,7 +156,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# C++ build files
+# C++ - Build files and executables
 build/
 *.o
 *.a
@@ -160,24 +164,132 @@ build/
 *.out
 *.exe
 
-# Rust
+# C++ - Our motor control programs (compiled executables)
+can_motor_scanner
+velocity_acceleration_control
+angle_stream_control
+
+# C++ - Compiled binaries for all platforms
+*.bin
+*.app
+*.run
+
+# Rust - Build artifacts and dependencies
 /target/
 Cargo.lock
 
-# Arduino
+# Arduino - Build files
 *.hex
 *.elf
 *.map
 *.d
 
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# All Languages - Build directories common to all languages
+build/
+dist/
+out/
 
-# OS files
+# All Languages - Make/CMake build files
+Makefile.deps
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.cmake
+
+# All Languages - GCC/Clang build artifacts
+*.ii
+*.s
+*.lst
+
+# All Languages - Dependency files
+*.d
+*.dep
+*.depends
+
+# All Languages - Performance profiling files
+*.prof
+*.gprof
+*.perf
+gcov/
+*.gcov
+*.gcda
+*.gcno
+
+# All Languages - Testing/coverage artifacts
+coverage/
+.coverage
+htmlcov/
+.nyc_output
+test-results/
+
+# Editor temporary files
+.#*
+\#*#
+*~
+.*.swp
+.*.swo
+
+# Backup files
+*.bak
+*.backup
+*.orig
+*.rej
+
+# Patch files
+*.patch
+*.diff
+
+# IDE files (additional specific patterns)
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/c_cpp_properties.json
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/shelf
+.idea/contentModel.xml
+.idea/dataSources.ids
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/libraries
+.idea/modules.xml
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/datasources.xml
+.idea/dataSources.ids
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/libraries
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/datasources.xml
+.idea/dataSources.ids
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/libraries
+
+# OS files (additional patterns)
 .DS_Store
 .DS_Store?
 ._*
@@ -185,13 +297,40 @@ Cargo.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
 
 # Logs
 *.log
 logs/
+*.logs
+log/
+logs.txt
 
 # Temporary files
 *.tmp
 *.temp
 *.bak
 *.backup
+*.cache
+*.pid
+
+# Motor Control - CAN interface specific
+*.can
+*.socket
+
+# Motor Control - Configuration files with sensitive data
+config.local.*
+*.local.conf
+.secrets
+
+# Motor Control - Runtime files
+*.pid
+*.lock
+motor_state_*.json

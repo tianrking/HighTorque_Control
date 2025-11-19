@@ -35,13 +35,20 @@ python3 velocity_acceleration_control.py --motor_id 1 --mode interactive
 python3 angle_stream_control.py --motor_id 1 --mode interactive
 ```
 
-### C++实现 ⏳ 待开发
+### C++实现 ✅
 
 ```bash
-# 待实现
 cd cpp
 make
-sudo ./build/lively-motor-control 1
+
+# 扫描电机
+./can_motor_scanner 1 5
+
+# 速度控制
+./velocity_acceleration_control 1
+
+# 角度控制
+./angle_stream_control 1 interactive
 ```
 
 ### Rust实现 ⏳ 待开发
@@ -62,9 +69,11 @@ CUS_02/
 │   ├── angle_stream_control.py         # 角度流控制
 │   └── requirements.txt               # Python依赖
 ├── cpp/                    # C++实现
-│   ├── src/
-│   ├── include/
-│   └── Makefile
+│   ├── can_motor_scanner.cpp          # 电机扫描工具
+│   ├── velocity_acceleration_control.cpp # 速度+加速度控制
+│   ├── angle_stream_control.cpp       # 角度流控制
+│   ├── Makefile                       # 构建系统
+│   └── README.md                      # C++文档
 ├── rust/                   # Rust实现
 │   ├── src/
 │   └── Cargo.toml
@@ -82,10 +91,14 @@ CUS_02/
 - ✅ MIT风格阻抗控制
 - ✅ 正弦波/阶梯/斜坡测试
 
-### C++实现 (200Hz, 1ms延迟) ⏳ 待开发
-- ⏳ 高性能实时控制
-- ⏳ 原生CAN接口
-- ⏳ 多线程控制架构
+### C++实现 (200Hz, 1ms延迟) ✅
+- ✅ 高性能实时控制 (200Hz控制循环)
+- ✅ 原生SocketCAN接口
+- ✅ 多线程控制架构
+- ✅ 智能急刹与最大减速
+- ✅ MIT风格阻抗控制 (0x90流命令)
+- ✅ 交互式和自动控制模式
+- ✅ 正弦波、阶梯和多位置测试
 
 ### Rust实现 (150Hz, 2ms延迟) ⏳ 待开发
 - ⏳ 内存安全保证
@@ -184,7 +197,7 @@ controller.set_angle(90.0)  # 90度
 | 语言 | 控制频率 | 延迟 | 内存使用 | 状态 | 适用平台 |
 |------|----------|------|----------|------|----------|
 | Python | 100 Hz | 5ms | 50MB | ✅ 已完成 | Linux开发 |
-| C++ | 200 Hz | 1ms | 10MB | ⏳ 待开发 | Linux生产 |
+| C++ | 200 Hz | 1ms | 10MB | ✅ 已完成 | Linux生产 |
 | Rust | 150 Hz | 2ms | 15MB | ⏳ 待开发 | Linux生产 |
 | Arduino | 50-200Hz | 2-20ms | 10-50KB | ⏳ 待开发 | ESP32/MCU |
 
@@ -220,7 +233,7 @@ sudo python3 can_motor_scanner.py
 - 📄 [高擎电机SDK协议表](../高擎电机SDK协议表.md) - 完整的协议规范
 - 🔗 [官方SDK](https://github.com/HighTorque-Robotics/livelybot_hardware_sdk) - 官方SDK仓库
 - 📖 [Python文档](python/README.md) - Python实现详解
-- ⏳ [C++文档](cpp/README.md) - C++实现详解 (待实现)
+- ✅ [C++文档](cpp/README.md) - C++实现详解 (已完成)
 - ⏳ [Rust文档](rust/README.md) - Rust实现详解 (待实现)
 - ⏳ [Arduino文档](arduino/README.md) - Arduino实现详解 (待实现)
 
@@ -228,14 +241,16 @@ sudo python3 can_motor_scanner.py
 
 ### ✅ 已完成
 - [x] Python CAN协议实现
-- [x] 电机扫描工具
-- [x] 速度+加速度控制 (智能急刹)
-- [x] 角度流控制 (0x90命令)
-- [x] MIT风格阻抗控制
-- [x] 多种测试模式
+- [x] C++高性能实现 (200Hz控制循环)
+- [x] 电机扫描工具 (Python & C++)
+- [x] 速度+加速度控制与智能急刹 (Python & C++)
+- [x] 角度流控制 (0x90命令) (Python & C++)
+- [x] MIT风格阻抗控制 (Python & C++)
+- [x] 多种测试模式 (交互式、正弦波、阶梯、多位置)
+- [x] SocketCAN原生接口支持
+- [x] 多线程控制架构
 
 ### ⏳ 待实现
-- [ ] C++高性能实现
 - [ ] Rust内存安全实现
 - [ ] Arduino/ESP32实现
 - [ ] GUI控制界面
@@ -267,7 +282,7 @@ MIT License - 详见LICENSE文件
 ## 相关链接
 
 - [高擎机器人官方SDK](https://github.com/HighTorque-Robotics/livelybot_hardware_sdk) - 协议参考
-- [RobStride Control](https://github.com/tianrking/RobStride_Control) - 灵足电机控制灵感
+- [RobStride Control](https://github.com/tianrking/RobStride_Control) - 相关项目：灵足电机控制
 
 ---
 
